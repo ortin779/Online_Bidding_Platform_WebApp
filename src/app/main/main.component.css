@@ -1,0 +1,123 @@
+.float-right a{
+  margin-left: 15px;
+  border-radius: 5px;
+  font-size: 17px;
+  color: white;
+  padding: 10px;
+}
+.float-right a:hover{
+  background: #3aa9d5;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar-brand{
+  color: aliceblue;
+  font-weight: bolder;
+}
+.navbar{
+  font-family: Montserrat, sans-serif;
+  background: #3898c7;
+  color: white;
+  position:sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+}
+#avatar{
+  font-size: medium;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+.active{
+  background: #3aa9d5;
+}
+
+body{
+  height: auto;
+  width: 100%;
+}
+
+.drop-down{
+  display: none;
+  position: absolute;
+  background-color:   #3898c7;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.drop-down a{
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-div:hover .drop-down{
+  display: block;
+}
+
+.drop-down a:hover{
+  background-color: #3aa9d5;
+}
+
+
+#sidenav{
+  height: 100%;
+  font-family: Montserrat, sans-serif;
+  width: 250px;
+  position: fixed;
+  padding: 10px;
+  border: 1px solid aliceblue;
+  background-color: #3898c7;
+  z-index: 1;
+  left: 0;
+  overflow-x: hidden;
+}
+
+#sidenav a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+
+#sidenav a:hover {
+  background: #3aa9d5;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.content{
+  margin-left: 250px;
+}
+.drop-down-nav{
+  display: none;
+  position: absolute;
+  background-color: #3898c7;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.drop-down-nav a{
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-div-nav:hover .drop-down-nav{
+  display: block;
+  border-radius: 20px;
+}
+
+.drop-down-nav a:hover{
+  background-color: #3aa9d5;
+  border-radius: 20px;
+}
+.active{
+  background-color: #3aa9d5;
+}

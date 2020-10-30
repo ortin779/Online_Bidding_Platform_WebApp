@@ -1,0 +1,44 @@
+<div class="row container-fluid justify-content-center" style="font-family: Montserrat, sans-serif;">
+    <div class="col-5">
+        <div class="text-center">
+            <h1 class="h3">Product Details</h1>
+        </div>
+        <form [formGroup]="sellerForm" (ngSubmit)="auctionProduct()">
+            <div class="form-group">
+                <p>Product Name</p>
+                <input type="text" class="form-control" formControlName="productName"
+                 [class.invalid-input]="sellerForm.get('productName').touched && sellerForm.get('productName').invalid" >
+            </div>
+            <div *ngIf="sellerForm.get('productName').touched && sellerForm.get('productName').invalid">
+                <small class="text-danger">Enter the </small>
+            </div>
+            <div class="form-group">
+                <p>Product Category</p>
+                <select class="form-control" formControlName='category'>
+                    <option selected value="">Choose One Category</option>
+                    <option [value]="cat" *ngFor="let cat of categories">{{cat}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p class="">InitialBid</p>
+                <input type="number" class="form-control" pattern="^[1-9]{1}[0-9]*" formControlName="initialBid"
+                [class.invalid-input]="sellerForm.get('initialBid').touched && sellerForm.get('initialBid').invalid">
+            </div>
+            <div *ngIf="sellerForm.get('initialBid').touched && sellerForm.get('initialBid').invalid">
+                <small class="text-danger" *ngIf="sellerForm.get('initialBid').errors?.required">Please Set Minimum Bid Value</small>
+            </div>
+            <div class="form-group">
+                <p>Description</p>
+                <input type="text" class="form-control" formControlName="description">
+            </div>
+            <div class="form-group">
+                <p>Product Image</p>
+                <input type="file" class="formControl" (change)="onSelectedFile($event)" formControlName='file'>
+            </div>
+            <button [disabled]="!sellerForm.valid" class="btn btn-primary">Auction</button>
+        </form>
+    </div>
+    <div *ngIf="sellerForm.get('file').touched" class="col-5 align-content-left">
+        <img [src]="imageUrl" width="440px" height="440px">
+    </div>
+</div>

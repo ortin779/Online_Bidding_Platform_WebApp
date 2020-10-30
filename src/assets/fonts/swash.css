@@ -1,0 +1,12 @@
+@font-face {
+    font-family: swash;
+    src: url("/assets/font/BerkshireSwash-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: alegreya;
+    src: url("/assets/font/Alegreya-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: androgyne;
+    src: url("/assets/font/Androgyne_TB.otf") format("truetype");
+}

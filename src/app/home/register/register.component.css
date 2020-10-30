@@ -1,0 +1,17 @@
+.invalid-input {
+  border-radius: 5px;
+  border: 2px solid #f03608;
+}
+body{
+  position: relative;
+  background: linear-gradient(to left, #ee9ca7, #ffdde1); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  width: auto;
+}
+*{
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}

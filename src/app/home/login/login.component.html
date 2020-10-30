@@ -1,0 +1,41 @@
+<body>
+<div class="mystyle row justify-content-center">
+  <div class="col-md-5">
+    <h3 class="text-md-center mt-5" style="font-family: androgyne;letter-spacing: 2px;">Login</h3>
+    <hr>
+    <div *ngIf="!isLoginSuccess" class="alert alert-danger">
+      Invalid Login Credentials
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)='login()'>
+      <div class="form-group">
+        <p class="mystyle">userName</p>
+        <input type="text" class="form-control" [class.invalid-input]="loginForm.get('userName').touched && loginForm.get('userName').invalid" formControlName="userName">
+        <div *ngIf="loginForm.get('userName').invalid && loginForm.get('userName').touched">
+          <small *ngIf="loginForm.get('userName').errors?.required"
+                 [class.text-danger]="loginForm.get('userName').errors?.required" >name required</small>
+          <small *ngIf="loginForm.get('userName').errors?.minlength"
+                 [class.text-danger]="loginForm.get('userName').errors?.minlength" >name should have atleast 4
+            characters</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <p class="">password</p>
+        <input name="password" class="form-control" [class.invalid-input]="loginForm.get('password').touched && loginForm.get('password').invalid" formControlName="password" required type="password">
+        <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+          <small *ngIf="loginForm.get('password').errors?.required"
+                 [class.text-danger]="loginForm.get('userName').errors?.required" >password required</small>
+          <small *ngIf="loginForm.get('password').errors?.minlength"
+                 [class.text-danger]="loginForm.get('password').errors?.minlength" >password should have atleast 6
+            characters</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <input class="btn btn-success" type="submit" [disabled]="loginForm.invalid" value="Login"><span>
+        <a style="margin-left: 20px;color: white" routerLink="../forgotpassword">Forgot Password?</a>
+      </span>
+      </div>
+      <a style="color: white;" routerLink="../register" activatedRoute="active">New User?? Register Here</a>
+    </form>
+  </div>
+</div>
+</body>

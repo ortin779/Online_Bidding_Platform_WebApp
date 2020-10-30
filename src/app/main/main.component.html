@@ -1,0 +1,42 @@
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/home"><img  src="/assets/images/logo.svg" style="border-radius: 25%;" height="40px" width="40px"></a>
+        <a class="navbar-brand" routerLink="/home" style="font-size: 25px;">Best Bid</a>
+      </div>
+      <div class="float-right">
+        <div class="float-right d-flex">
+          <div class="float-right">
+            <div class="drop-div-nav">
+              <a class="drop-btn-nav">{{username[0].toUpperCase() + username.substring(1)}}</a>
+              <div class="drop-down-nav m-0">
+                <a routerLink="profile" class="m-0">Profile</a>
+                <a (click)="logout()" class="m-0">Logout</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div id="sidenav">
+    <div class="mt-5">
+      <a routerLink="products" routerLinkActive="active"><img src="/assets/images/color_images/products.svg" width="35px" style="margin-right: 10px;">Products</a>
+      <a routerLink="sellproduct" routerLinkActive="active"><img src="/assets/images/color_images/sell.svg" width="35px" style="margin-right: 10px;">Sell Product</a>
+      <a routerLink="mybids" routerLinkActive="active"><img src="/assets/images/color_images/bid.svg" width="35px" style="margin-right: 10px;">Placed Bids</a>
+      <a routerLink="myauctions" routerLinkActive="active"><img src="/assets/images/color_images/received.svg" width="35px" style="margin-right: 10px;">Received Bids</a>
+      <div class="drop-div">
+        <a class="drop-btn"><img src="/assets/images/color_images/order.svg" width="35px" style="margin-right: 10px;">Orders</a>
+        <div class="drop-down">
+          <a routerLink="purchased"><img src="/assets/images/color_images/purchased.svg" width="35px" style="margin-right: 10px;">Purchased</a>
+          <a routerLink="sold"><img src="/assets/images/color_images/sold.svg" width="35px" style="margin-right: 10px;">Sold</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</body>

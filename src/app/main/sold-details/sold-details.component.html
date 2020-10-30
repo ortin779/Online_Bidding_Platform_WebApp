@@ -1,0 +1,52 @@
+<body>
+  <div class="container" *ngIf="!isEmpty">
+    <div>
+      <div class="ml-4">
+        <h3 class="text-center">Sold Products</h3>
+        <div class="d-flex justify-content-center align-content-center">
+          <input type="text" placeholder="Search" class="form-control-md" [(ngModel)]="searchText" name="searchText">
+        </div>
+      </div>
+      <div class="container d-flex justify-content-end" *ngIf="searchText.length===0">
+        <strong class="text-end">Total Amount : {{totalMoney | currency:'INR':true}}</strong>
+      </div>
+    </div>
+    <hr>
+    <div  class="content">
+      <div class="container">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="text-center">
+              <th>Order Id</th>
+              <th>Product Name</th>
+              <th>Category</th>
+              <th>Ordered Date</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Customer Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders | searchFilter : searchText" class="text-center">
+              <td class="align-middle">{{order.orderId}}</td>
+              <td class="align-middle">{{order.productName}}</td>
+              <td class="align-middle">{{order.category}}</td>
+              <td class="align-middle">{{order.orderDate | date}}</td>
+              <td class="align-middle">{{order.price | currency:'INR':true}}</td>
+              <td><img [src]="order.productImage" width="100px" height="100px"></td>
+              <td class="align-middle">{{order.customerName}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isEmpty" class="mt-5">
+    <div>
+      <img src="\assets\images\emptyCart.png" style="margin-left: auto; margin-right: auto;display: block">
+    </div>
+    <h3 class="text-center mt-5">
+      No Orders Received...
+    </h3>
+  </div>
+</body>

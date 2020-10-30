@@ -1,0 +1,24 @@
+<body style="font-family: Montserrat, sans-serif;">
+  <h3 class="text-success center" style="text-align: center;">Your Bid's</h3>
+<div class="row mt-1 container-fluid">
+    <div class="col-sm-4" *ngFor="let bid of bids">
+      <div class="card mb-4 shadow">
+        <img [src]="bid.product.image" alt="Product Image" width="150px" height="150px" class="rounded mx-auto shadow mt-2">
+        <div class="d-flex card-body" style="flex-direction: column;">
+          <h3 class="text-center">{{bid.product.productName}}</h3>
+          <p class="card-text ">Description : {{bid.product.description}}</p>
+          <p >SellerName : {{bid.sellerName}}</p>
+          <p>Initial Bid : {{ bid.product.initialBid | currency:'INR':true}}</p>
+          <p>Your Bid : {{ bid.bidValue | currency:'INR':true}}</p><br>
+          <a *ngIf="bid.bidStatus" (click)="purchaseProduct(bid.bidId)" class="btn btn-success">Pay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container md-6 mt-5 shadow-sm" *ngIf="isEmpty">
+    <div class="d-flex justify-content-center">
+      <img src="/assets/images/undraw_No_data_re_kwbl.svg" width="250px" height="250px">
+    </div>
+    <h1 class="text-center">You didn't Bid for any Product...<a routerLink="..">Click here</a>To Go Products Page<br><small class="text-primary"> Thanks for Visiting the Site..</small></h1>
+  </div>
+</body>

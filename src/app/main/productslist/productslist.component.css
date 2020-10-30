@@ -1,0 +1,15 @@
+.card:hover{
+    background-color: rgb(243, 244, 245);
+}
+body{
+    height: auto;
+    width: 100%;
+    font-family: Montserrat, sans-serif;
+    /*background: linear-gradient(180deg, rgb(109, 188, 253), 70%, #5ac3ec);*/
+  }
+.card{
+    background: linear-gradient(to bottom, #61a1c9, #e4e5e6);
+}
+.row{
+    align-content: center;
+}

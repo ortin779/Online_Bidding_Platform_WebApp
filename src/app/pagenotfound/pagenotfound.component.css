@@ -1,0 +1,6 @@
+body{
+    width: 100%;
+    background-image: url("/assets/images/no_page_found.jpg");
+    background-size: cover;
+    background-position: center;
+}

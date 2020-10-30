@@ -1,0 +1,16 @@
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+}
+
+#cvv{
+   -webkit-text-security:none
+}
+.invalid-input{
+   border: 2px solid red;
+}
+body{
+   height: auto;
+   width: 100%;
+   font-family: Montserrat, sans-serif;
+   /*background: linear-gradient(180deg, rgb(109, 188, 253), 70%, #5ac3ec);*/
+ }
